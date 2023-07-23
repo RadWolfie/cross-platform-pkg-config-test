@@ -23,6 +23,10 @@ jobs:
           - platform: macOS
             os: macos-latest
     steps:
+      - name: Get pkg-config version and output help info
+        run: |
+          pkg-config -version
+          pkg-config -h
       - name: Test pkg-config output (default)
         run: |
           pkg-config libcrypto --libs
