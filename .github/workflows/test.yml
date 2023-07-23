@@ -23,8 +23,13 @@ jobs:
           - platform: macOS
             os: macos-latest
     steps:
-      - name: Test pkg-config output
+      - name: Test pkg-config output (default)
         run: |
           pkg-config libcrypto --libs
           pkg-config libpng --libs
           pkg-config libjpeg --libs
+      - name: Test pkg-config output (--msvc-syntax)
+        run: |
+          pkg-config libcrypto --libs --msvc-syntax
+          pkg-config libpng --libs --msvc-syntax
+          pkg-config libjpeg --libs --msvc-syntax
