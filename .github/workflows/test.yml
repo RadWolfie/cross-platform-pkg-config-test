@@ -26,6 +26,10 @@ jobs:
             os: macos-latest
             # claim version option not supported
     steps:
+      - name: Try pkgconf
+        run: |
+          pkgconf --version
+          pkgconf -h
       - name: Get pkg-config version and output help info
         run: |
           pkg-config --version
