@@ -18,14 +18,16 @@ jobs:
         include:
           - platform: Windows
             os: windows-latest
+            # version says 0.26
           - platform: Linux
             os: ubuntu-latest
+            # claim version option not supported
           - platform: macOS
             os: macos-latest
+            # claim version option not supported
     steps:
       - name: Get pkg-config version and output help info
         run: |
-          pkg-config -version
           pkg-config -h
       - name: Test pkg-config output (default)
         run: |
